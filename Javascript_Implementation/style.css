@@ -1,0 +1,66 @@
+.masthead
+{
+  font-style : oblique;
+}
+h1
+{
+  color : yellow;
+  text-align: center;;
+}
+
+body
+{
+  background-color: lightblue
+}
+
+form
+{
+  text-align: center;
+}
+
+.board
+{
+  width : 40vw;
+  height: 40vw;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cell
+{
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  background-color: #2196F3;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  font-style : oblique;
+}
+
+.cell.cross,.cell.circle
+{
+  cursor: not-allowed;
+}
+
+.winning-message, .message
+{
+  text-align: center;
+  font-size: 30px;
+}
+
+.hide-container
+{
+  display: none;
+}
+
+.restart
+{
+  color : green;
+}

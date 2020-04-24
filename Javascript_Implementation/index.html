@@ -1,0 +1,50 @@
+<html lang = "en-US">
+
+<head>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe Game</title>
+  <script src="script.js" async></script>
+  <link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+
+  <header class = "masthead">
+    <h1> TIC TAC TOE GAME </h1>
+  </header>
+
+  <div class = "enter-players">
+    <form id = "player-details">
+      <div class = "player-container">
+        <label for="player1">Player 1</label>
+          <input type="text" placeholder="Enter Name" name="player1" id = "player1" class="player-input">
+      </div>
+      <div class = "player-container">
+        <label for="player2">Player 2</label>
+          <input type="text" placeholder="Enter Name" name="player2" id = "player2" class="player-input">
+      </div>
+      <input type="button"class="submit-button" onclick ="enterName()" value="Start">
+    </form>
+  </div>
+
+  <div class = "board hide-container" id = "board">
+    <div class = "cell" data-cell id = "00"></div>
+    <div class = "cell" data-cell id = "01"></div>
+    <div class = "cell" data-cell id = "02"></div>
+    <div class = "cell" data-cell id = "10"></div>
+    <div class = "cell" data-cell id = "11"></div>
+    <div class = "cell" data-cell id = "12"></div>
+    <div class = "cell" data-cell id = "20"></div>
+    <div class = "cell" data-cell id = "21"></div>
+    <div class = "cell" data-cell id = "22"></div>
+  </div>
+
+  <div message-text class = "message"></div>
+  <div class = "winning-message hide-container" id = "winning-message">
+      <button type="submit" name="restart" class = "restart" id='restart'>Restart</button>
+  </div>
+
+  </body>
+
+</html>
