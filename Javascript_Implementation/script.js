@@ -11,21 +11,13 @@ const message = document.querySelector('.message');
 
 // Select by ID
 const playerForm = document.getElementById('player-details');
-const winMessage = document.getElementById('winning-message');
-const restartButton = document.getElementById('restart');
-const cellList = document.getElementById('board');
+
 
 var success = false;
-var circleTurn = true;
-var primaryDiag = 0;
-var secDiag = 0;
-var checkRow = [];
-var checkCol = [];
-var isWinner = false;
 var playerCross = 0;
 var playerCircle = 0;
-var moveCount = 0;
-var player = "Player"
+var player = "Player";
+
 function initialize()
 {
   circleTurn = true;
@@ -42,12 +34,12 @@ function initialize()
   cellElements.forEach(cell => {
     document.getElementById(cell.id).textContent = '';
   });
-
 }
 
 
 /* Enter the names of the players */
 playerForm.addEventListener('submit', enterName);
+
 function enterName()
 {
     if(this.player1.value == '' || this.player2.value == '')
@@ -73,10 +65,8 @@ function currentPlayer()
 function placeMark(cell, curr)
 {
     cell.classList.add(curr);
-    cell.classList.add('val');
     let symbol = circleTurn ? "O" : "X";
     document.getElementById(cell.id).textContent = symbol;
-    alterMove();
 }
 
 function alterMove()
@@ -89,7 +79,7 @@ function alterMove()
 
 function checkWinner(r, c)
 {
-   var val = circleTurn ? 1 : -1;
+   let val = circleTurn ? 1 : -1;
    if(r == c)
      primaryDiag += val;
    if(r + c == 2)
@@ -109,16 +99,21 @@ function handleClick(e)
   if(isWinner)
   {
       winningMessageElement.classList.remove('hide-container');
+      cellElements.forEach(i => {
+        i.removeEventListener('click', handleClick);
+      });
       message.innerHTML = (player + " wins.");
       restartElement.addEventListener('click', clickRestart);
   }
   else
-  if(moveCount == 9)
+  if(moveCount == 8)
   {
     winningMessageElement.classList.remove('hide-container');
     message.innerHTML = "Draw";
     restartElement.addEventListener('click', clickRestart);
   }
+  else
+    alterMove();
 }
 
 function clickRestart()
@@ -132,7 +127,6 @@ function startGame()
   cellElements.forEach(cell => {
     cell.classList.remove(CROSS_CLASS);
     cell.classList.remove(CIRCLE_CLASS);
-    currentPlayer();
     cell.removeEventListener('click', handleClick);
     cell.addEventListener('click', handleClick, { once: true });
   });

@@ -2,6 +2,7 @@
 {
   font-style : oblique;
 }
+
 h1
 {
   color : yellow;
@@ -20,8 +21,8 @@ form
 
 .board
 {
-  width : 40vw;
-  height: 40vw;
+  width : 30vw;
+  height: 30vw;
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;
@@ -53,6 +54,7 @@ form
 {
   text-align: center;
   font-size: 30px;
+  position : relative
 }
 
 .hide-container
