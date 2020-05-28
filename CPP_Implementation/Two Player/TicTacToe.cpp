@@ -62,14 +62,8 @@ bool TicTacToe :: play(int turn, int row, int col)
     {
         secDiag += (turn == 0) ? 1 : -1;
     }
-    if(abs(diag) == N || abs(secDiag) == N)
-    {
-        return true;
-    }
-    else
-    { 
-        return false;
-    }
+    
+    return (abs(diag) == N || abs(secDiag) == N);
 }
 
 /**
