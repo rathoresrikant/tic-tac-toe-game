@@ -14,7 +14,7 @@ Resized the two vectors for storing current status for rows and columns
 */
 void TicTacToe :: initialize()
 {
-	checkRows.resize(N, 0);
+    checkRows.resize(N, 0);
     checkCols.resize(N, 0);
     diag = 0;
     secDiag = 0;
